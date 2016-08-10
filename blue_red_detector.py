@@ -72,7 +72,7 @@ print("actual value {0}".format(y[35]))
 
 predict_array = model.predict(x)
 
-print("\nPrinting predicted values 0-100 to file br_results.txt")
+print("\nPrinting predicted values 0-99 to file br_results.txt")
 with open("br_results.txt","w") as new_file:
 	for val in predict_array:
 		new_file.write("{0}\n".format(val[0]))
