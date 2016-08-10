@@ -52,13 +52,13 @@ y2 = dataset[:,0]
 y2 = [1.0 if "blue" in x else 0.0 for x in y2]
 y2 = np.array(y2)
 
-print("\nevaluating data that was trained on.")
-scores = model.evaluate(x, y, batch_size=56)
+print("\nevaluating data that the model was trained on.")
+scores = model.evaluate(x, y, batch_size=32)
 print("\n{0}: {1}".format(model.metrics_names[1], scores[1]*100))
 print("{0}: {1}\n".format(model.metrics_names[0], scores[0]*100))
 
-print("\nevaluating new random data that model hasn't seen.")
-scores = model.evaluate(x2, y2, batch_size=56)
+print("\nevaluating new random data that the model hasn't seen.")
+scores = model.evaluate(x2, y2, batch_size=32)
 print("\n{0}: {1}".format(model.metrics_names[1], scores[1]*100))
 print("{0}: {1}\n".format(model.metrics_names[0], scores[0]*100))
 
