@@ -2,10 +2,15 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout
 import numpy as np
 import csv
+import sys
 
 np.random.seed(7)
 
-with open("./blue_red_sample.csv",newline='') as csvfile:
+file_name = "./blue_red_sample.csv"
+if len(sys.argv) > 1:
+	file_name = sys.argv[1]
+
+with open(file_name, newline='') as csvfile:
 	f_read = csv.reader(csvfile, delimiter=',')
 	dataset = []
 	for row in f_read:
