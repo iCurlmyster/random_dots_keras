@@ -28,7 +28,7 @@ I evaluate the model on the data that was used to train it to get the accuracy o
 After the model has been trained and tested I print out the results of the model's predictions of the blue_red_sample.csv file to a file named br_results.txt. I then run the blue_red_graph.py which shows a graphical representation of the model's predictions versus the acutal results.
 
 ## Interpreting the Graph
-The graph displays the dots in their correct coordinates and are colored either blue, red, magenta, or yellow. 
+The graph displays the dots in their correct coordinates and are colored either blue, red, magenta, or yellow. I set the percentage threshold for interpreting if the dot is red or blue at 70%.
 
 *Blue dots* mean a correctly guessed blue dot.
 
