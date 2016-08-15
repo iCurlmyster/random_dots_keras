@@ -28,6 +28,8 @@ m_y = []
 y_x = []
 y_y = []
 
+total_num = len(predict_data)
+sum_num = 0
 
 print("Threshold at 70% for deciding blue or red. Above 70% is blue otherwise red.")
 for val in range(len(predict_data)):
@@ -35,6 +37,7 @@ for val in range(len(predict_data)):
 		if "blue" in br_data[val][0]:
 			b_x.append(br_data[val][1])
 			b_y.append(br_data[val][2])
+			sum_num += 1
 		else:
 			m_x.append(br_data[val][1])
 			m_y.append(br_data[val][2])
@@ -42,6 +45,7 @@ for val in range(len(predict_data)):
 		if "red" in br_data[val][0]:
 			r_x.append(br_data[val][1])
 			r_y.append(br_data[val][2])
+			sum_num += 1
 		else:
 			y_x.append(br_data[val][1])
 			y_y.append(br_data[val][2])
@@ -49,6 +53,8 @@ for val in range(len(predict_data)):
 print("Blue dots: Correctly labeled blue dots.\nRed dots: Correctly labeled red dots.")
 print("Magenta dots: Dots that should be labeled red but were identified as blue.")
 print("Yellow dots: Dots that should be labeled blue but were identified as red.")
+
+print("\nAccuracy based on threshold at 70%% is: %f\n" % ( ((sum_num/total_num)*100) ) )
 
 plt.plot(b_x, b_y, 'bo')
 plt.plot(r_x, r_y, 'ro')
